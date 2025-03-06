@@ -1,0 +1,9 @@
+$file_list = Get-ChildItem -Path *.txt
+for (
+   $i = 0
+   $i -lt $file_list.Count
+   $i++
+) {
+     Clear-Content $file_list[$i].Name
+}
+ls
