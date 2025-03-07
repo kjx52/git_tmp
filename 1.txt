@@ -1,8 +1,0 @@
-remote: error: GH013: Repository rule violations found for refs/heads/main.        
-remote: Review all repository rules at https://github.com/kjx52/git_tmp/rules?ref=refs%2Fheads%2Fmain        
-remote: 
-remote: - At least 1 approving review is required by reviewers with write access.        
-remote: 
-To https://github.com/kjx52/git_tmp.git
- ! [remote rejected] main -> main (push declined due to repository rule violations)
-error: failed to push some refs to 'https://github.com/kjx52/git_tmp.git'
