@@ -16,15 +16,22 @@ if [[ $(ls| grep tmp) != ""
 then
     for i in `seq 20`
     do
-	res[$i]=$(date +%s%N | md5sum | cut -c 1-9);
+	res[$i]="RANDOM_DATA: $(date +%s%N | md5sum | cut -c 1-9) \n";
+	printf "RES[$i]: ${res[$i]}\n";
     done
 
-    res2=$(echo ${res[@]}| sort | uniq -c | sort -rn -k1);
+    # debug
+    printf ${res[@]};
+    printf ${res[@]}| sort;
+    printf ${res[@]}| sort| uniq -c;
+    printf ${res[@]}| sort| uniq -c| sort -rn -k1;
+
+    res2=$(printf ${res[@]}| sort| uniq -c| sort -rn -k1);
    
-    rm $(ls| grep -E ^[0-9]{2}[0-9]*$)
+    rm $(ls| grep -E ^[0-9]{2}[0-9]*$);
 
     filename=$RANDOM;
-    echo "This is $VERSION random data: $res2" 1>"./$filename";
+    printf "This is $VERSION random data: $res2" >"./$filename";
     cat $filename;
 
 else
