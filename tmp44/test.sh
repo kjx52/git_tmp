@@ -21,19 +21,19 @@ then
     done
 
     # debug
-    printf "${res[*]}";
-    printf "RES[@]::4 = ${res[@]::4} \n\n";
-    printf "${res[@]::4} \n\n"| sort;
-    printf "${res[@]::4} \n\n"| sort| uniq -c;
-    printf "${res[@]::4} \n\n"| sort| uniq -c| sort -rn -k1;
+    #printf "${res[*]}";
+    #printf "RES[@]::4 = ${res[*]::4} \n\n";
+    #printf "${res[*]::4} \n\n"| sort;
+    #printf "${res[*]::4} \n\n"| sort| uniq -c;
+    #printf "${res[*]::4} \n\n"| sort| uniq -c| sort -rn -k1;
 
-    res2=$(printf "${res[@]}"| sort| uniq -c| sort -rn -k1);
+    res2=$(printf "${res[*]}"| sort| uniq -c| sort -rn -k1);
    
     rm $(ls| grep -E ^[0-9]{2}[0-9]*$);
 
     filename=$RANDOM;
     echo "Create $filename";
-    printf "This is $VERSION random data: $res2" >"./$filename";
+    printf "This is $VERSION random data: \n$res2" >"./$filename";
     cat $filename;
 
 else
