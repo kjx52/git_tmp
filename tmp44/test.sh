@@ -26,7 +26,7 @@ then
     #printf ${res[@]}| sort| uniq -c;
     #printf ${res[@]}| sort| uniq -c| sort -rn -k1;
 
-    res2=$(printf ${res[@]}| sort| uniq -c| sort -rn -k1);
+    res2=$(printf "${res[@]}"| sort| uniq -c| sort -rn -k1);
    
     rm $(ls| grep -E ^[0-9]{2}[0-9]*$);
 
