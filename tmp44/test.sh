@@ -21,10 +21,10 @@ then
     done
 
     # debug
-    printf ${res[@]};
-    printf ${res[@]}| sort;
-    printf ${res[@]}| sort| uniq -c;
-    printf ${res[@]}| sort| uniq -c| sort -rn -k1;
+    #printf ${res[@]};
+    #printf ${res[@]}| sort;
+    #printf ${res[@]}| sort| uniq -c;
+    #printf ${res[@]}| sort| uniq -c| sort -rn -k1;
 
     res2=$(printf ${res[@]}| sort| uniq -c| sort -rn -k1);
    
